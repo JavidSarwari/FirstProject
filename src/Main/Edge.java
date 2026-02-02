@@ -1,45 +1,36 @@
 package Main;
 
-import java.util.HashMap;
-import java.util.Map;
 
-public abstract class Edge {
-    protected final int edgeCoordinate;
-    private static final Map<Integer, EmptyEdge> CREAT_ALL_POSSIBLE_Edge = creatEmptyEdge();
+public class Edge {
+    final int edgeCoordinate;
 
 
-
-    private static Map<Integer, EmptyEdge> creatEmptyEdge() {
-        Map<Integer,EmptyEdge>  emptyEdge = new HashMap<>();
-        for (int i = 0; i < 9; i++) {
-            emptyEdge.put(i, new EmptyEdge(i));
-            
-        }
-        return emptyEdge;
+    public Edge(int edgeCoordinate){
+        this.edgeCoordinate = edgeCoordinate;
     }
 
-
-    public static final class EmptyEdge extends Edge{
-
-
+    public int getEdgeCoordinate() {
+        return edgeCoordinate;
     }
 
-
-    public static final class OccupiedEdge extends Edge{
-
+    public boolean isEdgeOccupied(Piece piece){
+        return this.edgeCoordinate == piece.getPiecePosition();
     }
 
-
-
-
-
     
-
-
-    
-
-
-
-
-    
+ 
 }
+
+
+
+
+
+    
+
+
+    
+
+
+
+
+    
